@@ -36,4 +36,7 @@ O programa possui duas principais funcionalidades:
 - Para números octais, apenas caracteres numéricos de '0' a '7' são permitidos.
 
 
+#
+![dimensional_model](code.png)
+
 

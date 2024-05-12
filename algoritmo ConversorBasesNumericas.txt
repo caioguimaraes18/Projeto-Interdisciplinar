@@ -1,0 +1,70 @@
+algoritmo ConversorBasesNumericas
+funcao BinarioParaDecimal(num_binario: caractere): inteiro
+    retorne inteiro(num_binario, 2)
+funcao HexadecimalParaDecimal(num_hex: caractere): inteiro
+    retorne inteiro(num_hex, 16)
+funcao OctalParaDecimal(num_octal: caractere): inteiro
+    retorne inteiro(num_octal, 8)
+inicio
+    inteiro opcao1
+    opcao1 <- 0
+    enquanto opcao1 <> 3 faca
+        escreva("------------------------------ Menu ----------------------------")
+        escreva("----------------------------------------------------------------")
+        escreva("Bem-vindo ao conversor de bases numéricas! Selecione uma opção: ")
+        escreva("----------------------------------------------------------------")
+        escreva("1. Conversão de decimal para binário, hexadecimal e octal")
+        escreva("2. Conversão de binário, hexadecimal e octal para decimal")
+        escreva("3. Sair")
+        escolha: caractere
+        leia(escolha)
+        se escolha = "1" entao
+            enquanto verdadeiro faca
+                escreva("Digite o número decimal: ")
+                num_decimal: caractere
+                leia(num_decimal)
+                se todos (digito in ['0','1','2','3','4','5','6','7','8','9']) entao
+                
+                senao
+                    escreva("Número decimal inválido. Por favor, digite apenas números.")
+            decimal_to_binary: caractere
+            decimal_to_binary <- inteiro_em_caractere(inteiro(num_decimal), 2)
+            decimal_to_hexadecimal: caractere
+            decimal_to_hexadecimal <- inteiro_em_caractere(inteiro(num_decimal), 16)
+            decimal_to_octal: caractere
+            decimal_to_octal <- inteiro_em_caractere(inteiro(num_decimal), 8)
+            escreva("Resultado Binário: ", decimal_to_binary)
+            escreva("Resultado Hexadecimal: ", decimal_to_hexadecimal)
+            escreva("Resultado Octal: ", decimal_to_octal)
+        se escolha = "2" entao
+            enquanto verdadeiro faca
+                escreva("Digite o número binário: ")
+                num_binario: caractere
+                leia(num_binario)
+                se todos (digito in ['0', '1']) entao
+                
+                senao
+                    escreva("Número binário inválido. Por favor, digite apenas '0' e '1'.")
+            enquanto verdadeiro faca
+                escreva("Digite o número hexadecimal: ")
+                num_hex: caractere
+                leia(num_hex)
+                se todos (digito in ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F']) entao
+                
+                senao
+                    escreva("Número hexadecimal inválido. Por favor, digite apenas '0' a '9' e 'A' a 'F'.")
+            enquanto verdadeiro faca
+                escreva("Digite o número octal: ")
+                num_octal: caractere
+                leia(num_octal)
+                se todos (digito in ['0', '1', '2', '3', '4', '5', '6', '7']) entao
+                
+                senao
+                    escreva("Número octal inválido. Por favor, digite apenas '0' a '7'.")
+            escreva("Conversão de binário para decimal: ", BinarioParaDecimal(num_binario))
+            escreva("Conversão de hexadecimal para decimal: ", HexadecimalParaDecimal(num_hex))
+            escreva("Conversão de octal para decimal: ", OctalParaDecimal(num_octal))
+        se escolha = "3" entao
+            escreva("Saindo...")
+        
+fimalgoritmo
